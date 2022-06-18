@@ -1,20 +1,18 @@
 import React from "react"
 import logo from '../../img/helenalogo.png'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import './NavBar.css'
 
 const NavBar = () => {
     return (
-      <div>
-        <a href="#"><img src={logo} alt="Logo" ></img></a>
-        <h1>Helena - Cerveza Artezanal</h1>
+      <header>
+        <a className="logo" href="#"><img src={logo} alt="Logo"></img></a>
         <nav>
           <a href="#">Nosotros</a>
           <a href="#">Cervezas</a>
           <a href="#">Tienda</a>
           <a href="#">Contactanos</a>
         </nav>
-        <ShoppingCartIcon color="disabled"/>
-      </div>
+      </header>
     )
 
 }
