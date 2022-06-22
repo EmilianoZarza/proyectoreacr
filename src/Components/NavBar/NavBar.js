@@ -1,5 +1,6 @@
 import React from "react"
-import logo from '../../img/helenalogo.png'
+import logo from '../../assets/hipatia.png'
+import { carrito } from '../CartWitget/CartWitget'
 import './NavBar.css'
 
 const NavBar = () => {
@@ -11,10 +12,10 @@ const NavBar = () => {
           <a href="#">Cervezas</a>
           <a href="#">Tienda</a>
           <a href="#">Contactanos</a>
-        </nav>
+          <carrito/>
+        </nav>  
       </header>
     )
-
 }
 
 export default NavBar
