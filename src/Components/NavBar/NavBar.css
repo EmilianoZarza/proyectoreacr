@@ -1,6 +1,6 @@
 header{
     display: flex;
-    align-items: center;
+    align-items:center;
 }
 
 .logo {
@@ -17,4 +17,9 @@ nav a{
     text-decoration: none;
     color: rgb(15, 15, 15);
     font-size: 19px;
+}
+
+.carrito{
+    justify-content:space-between;
+    
 }

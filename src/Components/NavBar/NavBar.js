@@ -1,6 +1,6 @@
 import React from "react"
 import logo from '../../assets/hipatia.png'
-import { carrito } from '../CartWitget/CartWitget'
+import CartWitget from '../CartWitget/CartWitget'
 import './NavBar.css'
 
 const NavBar = () => {
@@ -12,8 +12,8 @@ const NavBar = () => {
           <a href="#">Cervezas</a>
           <a href="#">Tienda</a>
           <a href="#">Contactanos</a>
-          <carrito/>
         </nav>  
+        <CartWitget className="carrito"/>
       </header>
     )
 }
