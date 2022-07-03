@@ -1,21 +1,34 @@
-import React from "react"
-import logo from '../../assets/hipatia.png'
-import CartWitget from '../CartWitget/CartWitget'
-import './NavBar.css'
+import React from "react";
+import logo from "../../assets/hipatia.png";
+import CartWidget from "../CartWitget/CartWitget";
+import styles from "./Navbar.Styles";
 
-const NavBar = () => {
-    return (
-      <header>
-        <a className="logo" href="#"><img src={logo} alt="Logo"></img></a>
+export const Navbar = ({name}) => {
+  const categorias = [
+    { name: "Nosotros", route: "#", id: 1 },
+    { name: "Cervezas", route: "#", id: 2 },
+    { name: "Galeria", route: "#", id: 3 },
+    { name: "Contactanos", route: "#", id: 4 }
+  ];
+
+  return (
+    <div style={styles.container}>
+      <div style={styles.branchContainer}>
+      <img style={styles.logo} src={logo} alt="logo" />
+      <h1 style={styles.title}>Cerveza Artezanal {name}</h1>
+      </div>
+      <div style={styles.links}>
         <nav>
-          <a href="#">Nosotros</a>
-          <a href="#">Cervezas</a>
-          <a href="#">Tienda</a>
-          <a href="#">Contactanos</a>
-        </nav>  
-        <CartWitget className="carrito"/>
-      </header>
-    )
-}
-
-export default NavBar
+          {categorias.map((element) => {
+            return (
+              <a style={styles.link} key={element.id} href={element.route}>
+                {element.name}
+              </a>
+            );
+          })}
+        </nav>
+        <CartWidget />
+      </div>
+    </div>
+  );
+};
