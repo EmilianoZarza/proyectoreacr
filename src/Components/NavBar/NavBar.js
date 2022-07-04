@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assets/hipatia.png";
 import CartWidget from "../CartWitget/CartWitget";
-import styles from "./Navbar.Styles";
+import styles from "../NavBar/Navbar.Styles";
 
 export const Navbar = ({name}) => {
   const categorias = [
