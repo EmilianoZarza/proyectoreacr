@@ -1,24 +1,30 @@
 import React from "react";
 import {Navbar} from "./Components/NavBar/Navbar";
 import "./App.css";
-import {ItemListContainer} from "./Conteiners/ItemListConteiner/ItemListConteiner";
+import {ItemListContainer} from "./Containers/ItemListContainer/ItemListContainer";
+import { ItemDetailContainer } from "./Components/ItemDetailContainer/ItemDetailContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Item } from "./Containers/ItemList/Item";
 
 const App = () => {
   const name = "Hipatia";
 
   return (
-    <div style={styles}>
-      <Navbar name = {name} />
-      <ItemListContainer greeting={"Bienvenidos a la mejor cerveceria del mundo"} />
+    <div>
+      <BrowserRouter>
+        <Navbar name = {name}>
+          <Routes>
+            <Route path = "/" element={<ItemListContainer/>}/>
+            <Route path = "/categories/:categoria:type" element={ItemListContainer}/>
+            <Route path = "/product/:id" element={ItemDetailContainer}/>
+          </Routes>
+        </Navbar>
+        <ItemListContainer greeting={"Bienvenidos a la mejor cerveceria del mundo"} />
+      </BrowserRouter>
     </div>
+
   );
 };
 
 export default App;
 
-const styles = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center"
-};

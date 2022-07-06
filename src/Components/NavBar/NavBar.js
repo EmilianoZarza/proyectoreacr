@@ -1,7 +1,6 @@
 import React from "react";
 import logo from "../../assets/hipatia.png";
 import CartWidget from "../CartWitget/CartWitget";
-import styles from "../NavBar/Navbar.Styles";
 
 export const Navbar = ({name}) => {
   const categorias = [
@@ -12,16 +11,16 @@ export const Navbar = ({name}) => {
   ];
 
   return (
-    <div style={styles.container}>
-      <div style={styles.branchContainer}>
-      <img style={styles.logo} src={logo} alt="logo" />
-      <h1 style={styles.title}>Cerveza Artezanal {name}</h1>
+    <div>
+      <div>
+      <img src={logo} alt="logo" />
+      <h1 >Cerveza Artezanal {name}</h1>
       </div>
-      <div style={styles.links}>
+      <div>
         <nav>
           {categorias.map((element) => {
             return (
-              <a style={styles.link} key={element.id} href={element.route}>
+              <a key={element.id} href={element.route}>
                 {element.name}
               </a>
             );
