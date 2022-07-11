@@ -1,0 +1,11 @@
+@layer Containers {
+    .card{
+        @apply bg-white text-black w-72 drop-shadow-md rounded-md overflow-hidden 
+    }
+    .badge{
+        @apply px-3 py-1 rounded-full text-xs bg-red-100
+    }
+    .product-title{
+        @apply font-bold text-2xl overflow-ellipsis overflow-hidden whitespace-nowrap
+    }
+}

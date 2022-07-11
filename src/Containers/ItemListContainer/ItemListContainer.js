@@ -27,8 +27,8 @@ export const ItemListContainer = ({ greeting }) => {
   }, []);
 
   return (
-    <>
-      <h1>{greeting}</h1>
+    <div className = "text-center m-10 text-xl">
+      <h1 className = "text-center m-10 text-xl font-bold">{greeting}</h1>
       {loading ? (
         <span>
           <ClipLoader color={"red"} loading={loading} size={150} />
@@ -36,6 +36,6 @@ export const ItemListContainer = ({ greeting }) => {
       ) : (
         <ItemList products={products} />
       )}
-    </>
+    </div>
   );
 };

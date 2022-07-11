@@ -3,20 +3,21 @@ import {Navbar} from "./Components/NavBar/Navbar";
 import "./App.css";
 import {ItemListContainer} from "./Containers/ItemListContainer/ItemListContainer";
 import { ItemDetailContainer } from "./Components/ItemDetailContainer/ItemDetailContainer";
+import { Cart } from "./Components/Cart/Cart"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Item } from "./Containers/ItemList/Item";
 
 const App = () => {
-  const name = "Hipatia";
 
   return (
+    
     <div>
       <BrowserRouter>
-        <Navbar name = {name}>
+        <Navbar>
           <Routes>
             <Route path = "/" element={<ItemListContainer/>}/>
             <Route path = "/categories/:categoria:type" element={ItemListContainer}/>
             <Route path = "/product/:id" element={ItemDetailContainer}/>
+            <Route path="/Cart" element={<Cart />}/>
           </Routes>
         </Navbar>
         <ItemListContainer greeting={"Bienvenidos a la mejor cerveceria del mundo"} />

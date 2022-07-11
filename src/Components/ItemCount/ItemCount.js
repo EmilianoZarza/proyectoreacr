@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export const ItemCount = ({ stock, initial = 0, onAdd }) => {
+export const ItemCount = ({ stock, initial = 1, onAdd }) => {
   
   const [count, setCount] = useState(initial);
 
@@ -9,19 +9,19 @@ export const ItemCount = ({ stock, initial = 0, onAdd }) => {
   };
 
   const handlerSubtract = () => {
-    if(count > 0) setCount(count - 1);
+    if(count > 1) setCount(count - 1);
   };
 
   const handlerAddToCart = () => {
-    if(count > 0) onAdd(count);
+    if(count > 1) onAdd(count);
   };
 
   return (
-    <div>
-      <button onClick={handlerAdd}>+</button>
-      <span color= "black">{count}</span>
-      <button onClick={handlerSubtract}>-</button>
-      <button onClick={handlerAddToCart}>Agregar al Carrito</button>
+    <div className="text-xl font-bold flex gap-2 bg-red-100 items-center">
+      <button className="bg-white drop-shadow-md rounded-md overflow-hidden m-1" onClick={handlerAdd}>+</button>
+      <span className="text-center text-black text-lg">{count}</span>
+      <button className="bg-white drop-shadow-md rounded-md overflow-hidden m-1" onClick={handlerSubtract}>-</button>
+      <button className="bg-white drop-shadow-md rounded-md overflow-hidden m-1" onClick={handlerAddToCart}>Agregar al Carrito</button>
     </div>
   );
 };  
