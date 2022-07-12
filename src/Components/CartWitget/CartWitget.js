@@ -1,7 +1,14 @@
+import React from 'react';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-const CartWidget = () => {
-  return <a href='#'><ShoppingCartIcon color='' fontSize='large' className= 'm-10 font-bold hover:animate-pulse'/></a>;
-};  
+
+    const CartWidget = () => {
+
+    return (
+        <button>
+    <ShoppingCartIcon sx={{ color: 'black', fontSize: 35, marginLeft: 1, marginRight: 1 }} />
+        </button>
+    )
+}
 
 export default CartWidget

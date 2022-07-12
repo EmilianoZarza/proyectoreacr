@@ -1,22 +1,23 @@
-import React from "react";
-import { ItemCount } from "../../Components/ItemCount/ItemCount";
-import "./Item.css"
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export const Item = ({ product }) => {
-  
-  return (
-    <div className="card">
-      <div>
-        <img src={product.url} alt={product.name} />
-      </div>
-      <div className="p-5 flex flex-col gap-3">
-        <div className="flex items-center gap-2">
-          <p className="badge">${product.price}</p>
-          <p className="badge">stock disponible:{product.stock}</p>
+const Item = ({  product }) => {
+
+    return (
+        <div>
+            <div>
+                <div>
+                    <img src={product.url} alt={product.name} />
+                </div>
+                <div>
+                    <h3>{product.name}</h3>
+                    <p>${product.price}</p>
+                </div>
+                <Link onClick={product.id} to={`/categories/${product.type}/${product.id}`}><button>Ver detalles del {product.type}</button></Link>
+                <p>Stock disponible : {product.stock}</p>
+            </div>
         </div>
-        <h2 className="product-title" title={product.name}>{product.name}</h2>
-        <ItemCount stock = {product.stock}/>
-      </div>
-    </div>
-  );
+    );
 };
+
+export default Item
