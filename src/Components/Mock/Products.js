@@ -76,7 +76,7 @@ export const Products = [
       name: "Etiquetamos con tus diseños personalizados",
       price: 750,
       stock: 50,
-      id: 9,
+      id: 10,
       url: "https://images.pexels.com/photos/5532831/pexels-photo-5532831.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
   ];
