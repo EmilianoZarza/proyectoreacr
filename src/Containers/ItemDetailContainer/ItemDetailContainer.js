@@ -32,7 +32,7 @@ const { id } = useParams();
     return(
         <>
         {loading ? (
-            <div>
+            <div className="flex justify-center">
                 <ClipLoader color={"#ee1d23"} loading={loading} size={150} />
             </div>
         ): error ? (

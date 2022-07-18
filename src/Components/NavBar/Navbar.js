@@ -3,7 +3,7 @@ import logo from '../../assets/hipatia.png';
 import CartWidget  from "../CartWitget/CartWitget";
 import { Link, NavLink } from 'react-router-dom';
 
-function NavBar() {
+function Navbar() {
 
     const categoria = [
         { name: "Productos", route: "/categories/Producto", id: "Producto" },

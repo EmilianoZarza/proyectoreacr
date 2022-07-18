@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 
 const ItemCount = ({ stock, initial = 1, onAdd }) => {
@@ -20,11 +19,11 @@ const ItemCount = ({ stock, initial = 1, onAdd }) => {
 
 return (
     <>
-        <div className="text-center font-semibold">
-            <button className="bg-red-100 items-center font-medium m-5 p-3" onClick={resta}>-</button>
-            <span className="font-bold text-center items-center">{contador}</span>
-            <button className="bg-red-100 items-center font-medium m-5 p-3" onClick={suma}>+</button>
-            <button className="bg-red-100 items-center font-medium m-5 p-3" onClick={agregado}>Agregar al Carrito</button>
+        <div className="flex justify-center bg-red-200 m-7 p-3">
+            <button className="font-semibold text-lg m-2 hover:bg-white" onClick={resta}>-</button>
+            <span className="font-bold text-xl m-2">{contador}</span>
+            <button className="font-semibold text-lg m-2 hover:bg-white" onClick={suma}>+</button>
+            <button className="font-bold text-2xl hover:bg-white" onClick={agregado}>Agregar al Carrito</button>
         </div>
     </>
 )}

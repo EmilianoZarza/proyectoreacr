@@ -4,17 +4,20 @@ import { Link } from 'react-router-dom';
 const Item = ({  product }) => {
 
     return (
-        <div>
-            <div>
-                <div>
+        <div className="">
+            <div className="">
+                <div className="">
                     <img src={product.url} alt={product.name} />
                 </div>
-                <div>
-                    <h3>{product.name}</h3>
-                    <p>${product.price}</p>
+                <div className="">
+                    <h3 className="">{product.name}</h3>
+                    <p className="">${product.price}</p>
+                    <Link onClick={product.id} to={`/categories/${product.type}/${product.id}`} className="d-block"><button className="btn btn-dark mx-5">Ver detalles del {product.type}</button></Link>
                 </div>
-                <Link onClick={product.id} to={`/categories/${product.type}/${product.id}`}><button>Ver detalles del {product.type}</button></Link>
-                <p>Stock disponible : {product.stock}</p>
+                <div className="">
+                {/* <Link onClick={product.id} to={`/categories/${product.type}/${product.id}`} className="d-block"><button className="btn btn-dark mx-5">Ver detalles del {product.type}</button></Link> */}
+                <p className="">Stock disponible : {product.stock}</p>
+                </div>
             </div>
         </div>
     );
