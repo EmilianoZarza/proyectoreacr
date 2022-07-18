@@ -34,7 +34,8 @@ const CartCustomProvider = ({ children }) => {
             // found.qty += products.qty;
             // setProducts(aux);
         } else {
-            setProducts([...products, addProduct]);
+            setProducts([...products, {...product}]);
+            console.log(products)
         };
     }
 

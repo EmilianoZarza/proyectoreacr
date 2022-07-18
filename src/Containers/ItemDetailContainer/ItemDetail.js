@@ -14,7 +14,7 @@ const onAdd = (contador) => {
 };
 
 return (
-    <div className="flex justify-center">
+    <div className="flex justify-center m-10">
         <div className="font-semibold text-sm">
             <img className="" src={product.url} alt={product.name} />
             <h1 className="bg-red-100">{product.name}</h1>
