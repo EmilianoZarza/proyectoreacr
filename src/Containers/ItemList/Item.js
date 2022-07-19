@@ -12,7 +12,7 @@ const Item = ({  product }) => {
                 <div className="">
                     <h3 className="">{product.name}</h3>
                     <p className="">${product.price}</p>
-                    <Link onClick={product.id} to={`/categories/${product.type}/${product.id}`} className="d-block"><button className="btn btn-dark mx-5">Ver detalles del {product.type}</button></Link>
+                    <Link to={`/categories/${product.type}/${product.id}`} className="d-block"><button className="btn btn-dark mx-5">Ver detalles del {product.type}</button></Link>
                 </div>
                 <div className="">
                 {/* <Link onClick={product.id} to={`/categories/${product.type}/${product.id}`} className="d-block"><button className="btn btn-dark mx-5">Ver detalles del {product.type}</button></Link> */}
