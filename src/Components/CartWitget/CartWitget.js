@@ -9,9 +9,10 @@ import { cartContext } from '../Context/CartContext';
         const { qtyProducts } = useContext(cartContext);
 
     return (
-        <button className="btn btn-secondary ms-3 px-1">
-    <ShoppingCartIcon sx={{ color: red[500], fontSize: 25, marginLeft: 1, marginRight: 1 }} />
-    <p>{qtyProducts}</p>
+        <button className="">
+    <ShoppingCartIcon sx={{ color: red[500], fontSize: 25, marginRight: 1 }} />
+    {qtyProducts >= 1 ?
+    <p className='m'>{qtyProducts}</p> : (false)}
         </button>
     )
 }

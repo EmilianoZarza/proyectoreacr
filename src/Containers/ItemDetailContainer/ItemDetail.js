@@ -16,16 +16,25 @@ const onAdd = (contador) => {
 return (
     <div className="flex justify-center m-10">
         <div className="font-semibold text-sm">
-            <img className="" src={product.url} alt={product.name} />
+            <img className="" src={product.url} alt={product.name}/>
             <h1 className="bg-red-100">{product.name}</h1>
+            <img className="" src={product.url2} alt={product.name}/>
             <span className="bg-red-100">${product.price}</span>
             <p>{product.description}</p>
             {!finalized ? (
             <ItemCount onAdd={onAdd} stock={product.stock} initial={1} />
         ) : (
-            <Link to="/cart">
-                <button className="bg-red-200">Finalizar compra</button>
-            </Link>
+        <> 
+            <div className=""> 
+                <Link to="/cart">
+                    <button className="bg-red-200 m-2">Finalizar Compra</button>
+                </Link>
+
+                <Link to="">
+                    <button className="bg-red-200 m-2 ">Seguir Comprando</button>
+                </Link>
+            </div>  
+        </>   
         )}
         </div>
     </div>

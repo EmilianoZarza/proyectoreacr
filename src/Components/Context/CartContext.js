@@ -6,6 +6,7 @@ const { Provider } = cartContext;
 const CartCustomProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
     const [qtyProducts, setQtyProducts] = useState(0);
+    // const [price, setPrice] = useState(0);
 
     const getProductsqty = () => {
         let qty = 0;
@@ -34,15 +35,30 @@ const CartCustomProvider = ({ children }) => {
             // found.qty += products.qty;
             // setProducts(aux);
         } else {
-            setProducts([...products, {...product}]);
-            console.log(products)
+            setProducts([...products,{...product}]);
         };
     }
 
 
     const deleteProduct = (id) => {
-        setProducts(products.filter(products => products.id === id));
-    };
+        setProducts(products.filter(product => product.id !== id));
+    }
+    //     if(dec){
+    //         const productFind = products.find(p => p.id === id);
+    //         const index = products.indexOf(productFind);
+    //         const aux = [...products];
+    //         aux[index].qty -= 1;
+    //         setProducts(aux);
+    //     }else {
+    //         setProducts(products.filter(product => product.id !== id));
+    //     }
+    // };
+
+    // const handlePrice = (p) => {
+    //     let precio = 0;
+    //     products.map((product) => (precio += product.amount * product.price));
+    //     setPrice(precio);
+    // }
 
     const IsinCart = (id) => {
         products.some(product => product.id === id)
