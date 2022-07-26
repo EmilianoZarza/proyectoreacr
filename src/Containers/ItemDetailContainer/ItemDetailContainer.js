@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from "react";
 import {ItemDetail}  from "../ItemDetailContainer/ItemDetail";
-import { Products } from "../../Components/Mock/Products";
 import ClipLoader from "react-spinners/ClipLoader";
 import { useParams } from 'react-router-dom';
-
-const promise = new Promise ((res, rej) => {
-    setTimeout(() => {
-        res(Products);
-    }, 2000);
-});
+import { db } from '../../firebase/firebase';
+import { getDoc, collection, doc } from "firebase/firestore";
 
 
 const ItemDetailContainer = ({ greeting }) => {
@@ -19,15 +14,29 @@ const [error, setError] = useState(false);
 const { id } = useParams();
 
     useEffect(() => {
-        promise.then((data) => {
+        const productCollection = collection(db, 'Products');
+        const refDoc = doc(productCollection, id);
+        getDoc(refDoc)
+        .then(result =>{
+            const producto = {
+                id: result.id,
+                ...result.data(),
+            }
+            setProduct(producto);
+        })
+        .catch(() => {
+            console.log('error')})
+        .finally(() => {
+            setLoading(false)})
+
+        /*promise.then((data) => {
             const getData = data[id]
             setProduct(getData)
             setLoading(false)
         }).catch(() => {
             console.log('error')
-        })
+        })*/
     }, [id]);
-    console.log(product)
     
     return(
         <>

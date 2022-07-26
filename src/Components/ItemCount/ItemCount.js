@@ -19,11 +19,11 @@ const ItemCount = ({ stock, initial = 1, onAdd }) => {
 
 return (
     <>
-        <div className="flex justify-center bg-red-200 m-7 p-3">
-            <button className="font-semibold text-lg m-2 hover:bg-white" onClick={resta}>-</button>
-            <span className="font-bold text-xl m-2">{contador}</span>
-            <button className="font-semibold text-lg m-2 hover:bg-white" onClick={suma}>+</button>
-            <button className="font-bold text-2xl hover:bg-white" onClick={agregado}>Agregar al Carrito</button>
+        <div className="flex justify-center m-5 p-2 font-light bg-red-200 text-black drop-shadow-md rounded-md overflow-hidden ">
+            <button className="font-mono text-lg m-2 hover:bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden p-3" onClick={resta}>-</button>
+            <span className="font-mono text-xl m-2 p-3">{contador}</span>
+            <button className="font-mono text-lg m-2 hover:bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden p-3" onClick={suma}>+</button>
+            <button className="font-mono text-2xl hover:bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden p-3" onClick={agregado}>Agregar al Carrito</button>
         </div>
     </>
 )}

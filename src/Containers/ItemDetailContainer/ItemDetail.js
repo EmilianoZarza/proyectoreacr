@@ -14,24 +14,23 @@ const onAdd = (contador) => {
 };
 
 return (
-    <div className="flex justify-center m-10">
-        <div className="font-semibold text-sm">
-            <img className="" src={product.url} alt={product.name}/>
-            <h1 className="bg-red-100">{product.name}</h1>
-            <img className="" src={product.url2} alt={product.name}/>
-            <span className="bg-red-100">${product.price}</span>
-            <p>{product.description}</p>
+    <div className="flex justify-center m-10 p-1 bg-red-50 text-black drop-shadow-md rounded-md overflow-hidden">
+        <img className="" src={product.url} alt={product.name}/>
+        <div className="flex-colum m-5 items-center">
+            <h1 className="m-5 p-2 font-light bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden">{product.name}</h1>
+            <span className="m-5 p-2 font-light bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden">Precio : ${product.price}</span>
+            <p className="m-5 p-2 font-light bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden">{product.description}</p>
             {!finalized ? (
             <ItemCount onAdd={onAdd} stock={product.stock} initial={1} />
         ) : (
         <> 
-            <div className=""> 
+            <div className="text-center"> 
                 <Link to="/cart">
-                    <button className="bg-red-200 m-2">Finalizar Compra</button>
+                    <button className="m-5 p-2 font-light bg-red-200 text-black drop-shadow-md rounded-md overflow-hidden">Finalizar Compra</button>
                 </Link>
 
-                <Link to="">
-                    <button className="bg-red-200 m-2 ">Seguir Comprando</button>
+                <Link to="/">
+                    <button className="m-5 p-2 font-light bg-red-200 text-black drop-shadow-md rounded-md overflow-hidden">Seguir Comprando</button>
                 </Link>
             </div>  
         </>   

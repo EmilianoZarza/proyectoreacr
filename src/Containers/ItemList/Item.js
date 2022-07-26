@@ -4,21 +4,22 @@ import { Link } from 'react-router-dom';
 const Item = ({  product }) => {
 
     return (
-        <div className="">
+        <div className="p-1 bg-red-50 text-black drop-shadow-md rounded-md overflow-hidden">
             <div className="">
-                <div className="">
+                <div>
                     <img src={product.url} alt={product.name} />
                 </div>
-                <div className="">
-                    <h3 className="">{product.name}</h3>
-                    <p className="">${product.price}</p>
-                    <Link to={`/categories/${product.type}/${product.id}`} className="">
-                        <button className="">Ver detalles del {product.type}</button>
-                    </Link>
+                <div>
+                    <h3 className="font-bold text-xl m-2 text-center">{product.name}</h3>
                 </div>
-                <div className="">
-                {/* <Link onClick={product.id} to={`/categories/${product.type}/${product.id}`} className="d-block"><button className="btn btn-dark mx-5">Ver detalles del {product.type}</button></Link> */}
-                <p className="">Stock disponible : {product.stock}</p>
+                <div className='m-5'>
+                    <p className="m-1 p-1 font-light bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden">Precio : ${product.price}</p>
+                    <p className="m-1 p-1 font-light bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden">Stock disponible : {product.stock}</p>
+                </div>
+                <div className='text-center p-2 m-5 font-mono bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden'>
+                    <Link to={`/categories/${product.type}/${product.id}`} className="">
+                            <button>Detalles del {product.type}</button>
+                    </Link>
                 </div>
             </div>
         </div>

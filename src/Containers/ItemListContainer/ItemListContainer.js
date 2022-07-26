@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
 import  ItemList from '../ItemList/ItemList';
-import { Products } from "../../Components/Mock/Products";
 import { useParams } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
-
-    const promise = new Promise ((res, rej) => {
-        setTimeout(() => {
-            res(Products);
-        }, 2000);
-    });
+import { db } from "../../firebase/firebase";
+import { getDocs, collection, query, where } from "firebase/firestore";
+import { Result } from "postcss";
 
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = ({}) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -19,20 +15,28 @@ const ItemListContainer = ({ greeting }) => {
     console.log(type)
 
         useEffect(() => {
-            const getitems = () => {
-                promise
-                .then((products) => {
-                    const getProducts = products.filter(x => x.type === type)
-                    type ? setProducts(getProducts) : setProducts(products)
+            
+            const q =  type
+            ? query(collection(db, 'Products'), where('type', '==', type))
+            : collection(db, 'Products');
+
+            getDocs(q)
+            .then(result => {
+                const lista = result.docs.map(doc => {
+                    return{
+                        id: doc.id,
+                        ...doc.data(),
+                    }
                 })
-                .catch((error) => {
-                    console.error("error: ", error);
-                })
-                .finally(() => {
-                    setLoading(false);
-                });
-            };
-            getitems();
+                setProducts(lista)
+            })
+            .catch((error) => {
+                console.error("error: ", error);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+
         },[type]);
 
     return(
@@ -49,7 +53,7 @@ const ItemListContainer = ({ greeting }) => {
                 <ClipLoader color={"#ee1d23"} loading={loading} size={150} />
             </div>
         ) : (
-        <div className="grid grid-cols-3 gap-2 bg-gray-100 text-black drop-shadow-md rounded-md overflow-hidden">
+        <div className="grid grid-cols-3 gap-5 m-10">
             <ItemList products={products} />
         </div>
         )}

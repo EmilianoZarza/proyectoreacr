@@ -12,28 +12,28 @@ import { cartContext } from "../Context/CartContext";
             <>
                 {qtyProducts === 0
                 ? 
-                <div className="flex item-center">
-                    <div className="text-center">
-                        <h1 className="font-bold">Cerveceria Artezanal Hipatia</h1>
+                <div className="grid justify-items-center">
+                    <div className="m-5 text-center">
+                        <h1 className="font-bold text-2xl m-5">Cerveceria Artezanal Hipatia</h1>
                         <hr className="divider"/>
-                        <h2 className="font-semibold">Aún no tienes Productos o Servicios en el Carrito, <Link to="/" className="text-black py-2">Click aqui para Comprar</Link></h2>
+                        <h2 className="font-semibold text-lg m-5">Aún no tienes Productos o Servicios en el Carrito, <Link to="/" className="m-3 p-1 font-light bg-red-100 text-black drop-shadow-md rounded-md overflow-hidden">Click aqui para Comprar</Link></h2>
                     </div>
                 </div> 
                 :  (
-                    <div className="flex">
-                        <div className="text-center">
-                            <h1 className="font-bold">Cerveceria Artezanal Hipatia</h1>
-                            <hr className=""/>
-                        <div className="">
-                            <table className="">
-                                <thead className="">
+                    <div className="grid justify-items-center">
+                        <div className="m-5 text-center">
+                            <h1 className="font-bold text-2xl m-5">Cerveceria Artezanal Hipatia</h1>
+                            <hr className="divider"/>
+                        <div>
+                            <table className="m-3 p-1 font-light bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden">
+                                <thead className="m-3 p-1 font-light bg-red-100 text-black">
                                     <tr>
                                         <th scope="col">ID</th>
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Precio</th>
                                         <th scope="col">Cantidad</th>
                                         <th scope="col">
-                                            <button onClick={() => clear()} className="">Limpiar</button>
+                                            <button onClick={() => clear()} className="m-3 p-1 font-light bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden">Limpiar</button>
                                         </th>
                                     </tr>
                                 </thead>
@@ -41,11 +41,11 @@ import { cartContext } from "../Context/CartContext";
                                     {products.map(product => <ItemCart key={product.id} product={product}/>)}
                                 </tbody>
                                 <tfoot>
-                                    <tr>
+                                    <tr className="m-3 p-1 font-light bg-red-100 text-black">
                                         <td colSpan="2">Total</td>
-                                        <td className=""><p className="">${products.reduce((acc, el) => acc + (el.qty * el.price), 0)}</p></td>
+                                        <td><p>${products.reduce((acc, el) => acc + (el.qty * el.price), 0)}</p></td>
                                         <td></td>
-                                        <button className="">Finalizar compra</button>
+                                        <button className="m-3 p-1 font-light bg-gray-100 text-black drop-shadow-md rounded-md overflow-hidden">Finalizar compra</button>
                                     </tr>
                                 </tfoot>
                             </table>
