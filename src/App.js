@@ -10,6 +10,7 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
+import Formulario from './Components/Cart/Formulario';
 
 const App = () => {
 
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/categories/:type" element={<ItemListContainer/>} />
             <Route path="/categories/:type/:id" element={<ItemDetailContainer/>}/>
             <Route path="/Cart" element={<Cart />}/>
+            <Route path="/Formulario" element={<Formulario/>}/>
           </Routes>
       </CartCustomProvider>
     </BrowserRouter>

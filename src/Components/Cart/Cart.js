@@ -4,9 +4,10 @@ import ItemCart from "./ItemCart";
 import { cartContext } from "../Context/CartContext";
 
 
+
     const Cart = () => {
 
-        const { qtyProducts, products, clear, addProducts } = useContext(cartContext)
+        const { qtyProducts, products, clear } = useContext(cartContext)
 
         return(
             <>
@@ -45,7 +46,9 @@ import { cartContext } from "../Context/CartContext";
                                         <td colSpan="2">Total</td>
                                         <td><p>${products.reduce((acc, el) => acc + (el.qty * el.price), 0)}</p></td>
                                         <td></td>
-                                        <button className="m-3 p-1 font-light bg-gray-100 text-black drop-shadow-md rounded-md overflow-hidden">Finalizar compra</button>
+                                        <Link to="/Formulario">
+                                            <button className="m-3 p-1 font-light bg-gray-100 text-black drop-shadow-md rounded-md overflow-hidden">Finalizar compra</button>
+                                        </Link>
                                     </tr>
                                 </tfoot>
                             </table>
