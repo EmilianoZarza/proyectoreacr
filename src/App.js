@@ -11,6 +11,7 @@ import {
   Route,
 } from 'react-router-dom';
 import Formulario from './Components/Cart/Formulario';
+import Footer from './Components/Footer/Footer';
 
 const App = () => {
 
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/Cart" element={<Cart />}/>
             <Route path="/Formulario" element={<Formulario/>}/>
           </Routes>
+        <Footer />
       </CartCustomProvider>
     </BrowserRouter>
     

@@ -58,7 +58,7 @@ import { cartContext } from "../Context/CartContext";
                     <input onChange={createidVenta} type="email" name="email" className="bg-red-100"></input>
                     <label>Observaciones</label>
                     <input onChange={createidVenta} type="message" name="observaciones" className="bg-red-100"></input>
-                    <submit onClick={finishBuy} className="m-5 p-2 text-center font-light bg-red-200 text-black drop-shadow-md rounded-md overflow-hiddenr" type="submit">
+                    <submit onClick={finishBuy} className="text-center bg-gray-50 hover:bg-red-300 text-black font-bold py-2 px-4 rounded" type="submit">
                         Finalizar Compra
                     </submit>
                 </form>

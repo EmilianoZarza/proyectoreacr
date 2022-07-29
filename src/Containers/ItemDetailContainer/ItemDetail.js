@@ -26,11 +26,11 @@ return (
         <> 
             <div className="text-center"> 
                 <Link to="/cart">
-                    <button className="m-5 p-2 font-light bg-red-200 text-black drop-shadow-md rounded-md overflow-hidden">Finalizar Compra</button>
+                    <button className="m-5 p-2 font-light bg-red-200 text-black drop-shadow-md rounded-md overflow-hidden hover:bg-red-300">Finalizar Compra</button>
                 </Link>
 
                 <Link to="/">
-                    <button className="m-5 p-2 font-light bg-red-200 text-black drop-shadow-md rounded-md overflow-hidden">Seguir Comprando</button>
+                    <button className="m-5 p-2 font-light bg-red-200 text-black drop-shadow-md rounded-md overflow-hidden hover:bg-red-300">Seguir Comprando</button>
                 </Link>
             </div>  
         </>   

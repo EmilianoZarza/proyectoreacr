@@ -16,7 +16,7 @@ const Item = ({  product }) => {
                     <p className="m-1 p-1 font-light bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden">Precio : ${product.price}</p>
                     <p className="m-1 p-1 font-light bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden">Stock disponible : {product.stock}</p>
                 </div>
-                <div className='text-center p-2 m-5 font-mono bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden'>
+                <div className='text-center p-2 m-5 font-mono bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden hover:bg-red-300'>
                     <Link to={`/categories/${product.type}/${product.id}`} className="">
                             <button>Detalles del {product.type}</button>
                     </Link>

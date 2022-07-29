@@ -34,7 +34,7 @@ import { cartContext } from "../Context/CartContext";
                                         <th scope="col">Precio</th>
                                         <th scope="col">Cantidad</th>
                                         <th scope="col">
-                                            <button onClick={() => clear()} className="m-3 p-1 font-light bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden">Limpiar</button>
+                                            <button onClick={() => clear()} className="m-3 p-1 font-light bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden hover:bg-red-300">Limpiar</button>
                                         </th>
                                     </tr>
                                 </thead>
@@ -47,7 +47,7 @@ import { cartContext } from "../Context/CartContext";
                                         <td><p>${products.reduce((acc, el) => acc + (el.qty * el.price), 0)}</p></td>
                                         <td></td>
                                         <Link to="/Formulario">
-                                            <button className="m-3 p-1 font-light bg-gray-100 text-black drop-shadow-md rounded-md overflow-hidden">Finalizar compra</button>
+                                            <button className="m-3 p-1 font-light bg-gray-100 text-black drop-shadow-md rounded-md overflow-hidden hover:bg-red-300">Finalizar compra</button>
                                         </Link>
                                     </tr>
                                 </tfoot>
