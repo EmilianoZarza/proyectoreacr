@@ -11,7 +11,7 @@ function Navbar() {
     ];
 
     return (
-        <nav className="flex justify-between m-3 items-center bg-red-100">
+        <nav className="flex justify-between m-3 items-center bg-red-100 rounded-lg">
                 <Link to="/"><img className="w-32 m-3" src={logo} alt="logo" /></Link>
                 <div>
                     <ul>

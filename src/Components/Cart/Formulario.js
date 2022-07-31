@@ -40,6 +40,7 @@ import { cartContext } from "../Context/CartContext";
             .then((result) => {
                 setidVenta(result.id)
             })
+    
         }
     
 
@@ -49,22 +50,22 @@ import { cartContext } from "../Context/CartContext";
                 <hr className="divider"/>
                 <form onSubmit={finishBuy} className="flex flex-col justify-content m-10 gap-3 bg-red-50">
                     <label>Nombre</label>
-                    <input onChange={createidVenta} type="text" name="nombre" className="bg-red-100" required></input>
+                    <input onChange={createidVenta} type="text" name="nombre" className="bg-red-100" placeholder="Juan" required></input>
                     <label>Apellido</label>
-                    <input onChange={createidVenta} type="text" name="apellido" className="bg-red-100" required></input>
+                    <input onChange={createidVenta} type="text" name="apellido" className="bg-red-100" placeholder="Perez" required></input>
                     <label>Telefono</label>
-                    <input onChange={createidVenta} type="number" name="telefono" className="bg-red-100" required></input>
+                    <input onChange={createidVenta} type="number" name="telefono" className="bg-red-100" placeholder="phone number" required></input>
                     <label>Email</label>
-                    <input onChange={createidVenta} type="email" name="email" className="bg-red-100"></input>
+                    <input onChange={createidVenta} type="email" name="email" className="bg-red-100" placeholder="correo@correo.com"></input>
                     <label>Observaciones</label>
-                    <input onChange={createidVenta} type="message" name="observaciones" className="bg-red-100"></input>
-                    <submit onClick={finishBuy} className="text-center bg-gray-50 hover:bg-red-300 text-black font-bold py-2 px-4 rounded" type="submit">
+                    <input onChange={createidVenta} type="message" name="observaciones" className="bg-red-100" placeholder="Deja aquí tu comentario."></input>
+                    <button className="text-center bg-gray-50 hover:bg-red-300 text-black font-bold py-2 px-4 rounded"><submit onClick={finishBuy}  type="submit">
                         Finalizar Compra
-                    </submit>
+                    </submit></button>
                 </form>
             </>
-        );
-        }
+        )
+    }
 
 
 export default Formulario
