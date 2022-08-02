@@ -22,6 +22,7 @@ import { cartContext } from "../Context/CartContext";
             })
         }
 
+
         let total = 0;
         for(let i = 0; i < products.length; i++){
         total += products[i].price * products[i].qty;
@@ -40,7 +41,6 @@ import { cartContext } from "../Context/CartContext";
             .then((result) => {
                 setidVenta(result.id)
             })
-    
         }
     
 
@@ -56,12 +56,12 @@ import { cartContext } from "../Context/CartContext";
                     <label>Telefono</label>
                     <input onChange={createidVenta} type="number" name="telefono" className="bg-red-100" placeholder="phone number" required></input>
                     <label>Email</label>
-                    <input onChange={createidVenta} type="email" name="email" className="bg-red-100" placeholder="correo@correo.com"></input>
+                    <input onChange={createidVenta} type="email" name="email" className="bg-red-100" placeholder="correo@correo.com" required></input>
                     <label>Observaciones</label>
                     <input onChange={createidVenta} type="message" name="observaciones" className="bg-red-100" placeholder="Deja aquí tu comentario."></input>
-                    <button className="text-center bg-gray-50 hover:bg-red-300 text-black font-bold py-2 px-4 rounded"><submit onClick={finishBuy}  type="submit">
+                    <button type="submit" className="text-center bg-gray-50 hover:bg-red-300 text-black font-bold py-2 px-4 rounded">
                         Finalizar Compra
-                    </submit></button>
+                    </button>
                 </form>
             </>
         )
