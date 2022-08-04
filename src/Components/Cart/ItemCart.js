@@ -12,7 +12,7 @@ const ItemCart = ({product}) => {
             <td>${product.price}</td>
             <td>{product.qty}</td>
             <td>
-                <button onClick={() => deleteProduct(product.id)}>
+                <button onClick={() => deleteProduct(product.id)} className="">
                     X
                 </button>
             </td>
