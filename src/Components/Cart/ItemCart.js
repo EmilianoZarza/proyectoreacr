@@ -12,7 +12,7 @@ const ItemCart = ({product}) => {
             <td>${product.price}</td>
             <td>{product.qty}</td>
             <td>
-                <button onClick={() => deleteProduct(product.id)} className="">
+                <button onClick={() => deleteProduct(product.id)} className="bg-gray-200 text-xs font-bold text-white p-1 hover:bg-white hover:text-black rounded-md ">
                     X
                 </button>
             </td>
