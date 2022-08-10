@@ -4,10 +4,10 @@ import { useParams } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 import { db } from "../../firebase/firebase";
 import { getDocs, collection, query, where } from "firebase/firestore";
-import { Result } from "postcss";
 
 
-const ItemListContainer = ({}) => {
+
+const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 

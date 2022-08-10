@@ -6,10 +6,10 @@ import { db } from '../../firebase/firebase';
 import { getDoc, collection, doc } from "firebase/firestore";
 
 
-const ItemDetailContainer = ({ greeting }) => {
+const ItemDetailContainer = () => {
 const [product, setProduct] = useState([]);
 const [loading, setLoading] = useState(true);
-const [error, setError] = useState(false);
+const [error] = useState(false);
 
 const { id } = useParams();
 
@@ -28,14 +28,6 @@ const { id } = useParams();
             console.log('error')})
         .finally(() => {
             setLoading(false)})
-
-        /*promise.then((data) => {
-            const getData = data[id]
-            setProduct(getData)
-            setLoading(false)
-        }).catch(() => {
-            console.log('error')
-        })*/
     }, [id]);
     
     return(

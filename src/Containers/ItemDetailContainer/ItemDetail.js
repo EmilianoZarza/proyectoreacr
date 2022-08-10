@@ -9,7 +9,6 @@ const { addProduct } = useContext(cartContext);
 
 const onAdd = (contador) => {
     addProduct({...product, qty: contador});
-    console.log(`Se agregaran ${contador} productos al carrito`);
     setFinalized(true);
 };
 

@@ -40,7 +40,7 @@ const CartCustomProvider = ({ children }) => {
         setProducts(products.filter(product => product.id !== id));
     }
     const IsinCart = (id) => {
-        products.some(product => product.id === id)
+        return products.some(product => product.id === id)
     };
 
     const clear = () => {
