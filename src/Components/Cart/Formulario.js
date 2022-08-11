@@ -48,7 +48,6 @@ const Formulario = ()=>  {
             clear();
 
         } catch (error) {
-            console.log(error);
         }
 
         setDatos({...form})

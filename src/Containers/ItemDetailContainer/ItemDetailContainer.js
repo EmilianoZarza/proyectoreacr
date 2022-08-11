@@ -24,8 +24,8 @@ const { id } = useParams();
             }
             setProduct(producto);
         })
-        .catch(() => {
-            console.log('error')})
+        .catch(() => {            
+        })
         .finally(() => {
             setLoading(false)})
     }, [id]);

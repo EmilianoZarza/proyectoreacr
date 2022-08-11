@@ -12,7 +12,6 @@ const ItemListContainer = () => {
     const [loading, setLoading] = useState(true);
 
     const { type } = useParams();
-    console.log(type)
 
         useEffect(() => {
             
@@ -31,7 +30,6 @@ const ItemListContainer = () => {
                 setProducts(lista)
             })
             .catch((error) => {
-                console.error("error: ", error);
             })
             .finally(() => {
                 setLoading(false);
