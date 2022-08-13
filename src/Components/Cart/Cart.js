@@ -26,10 +26,9 @@ import { cartContext } from "../Context/CartContext";
                             <h1 className="font-bold text-2xl m-5">Cerveceria Artezanal Hipatia</h1>
                             <hr className="divider"/>
                         <div>
-                            <table className="m-3 p-1 font-light bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden">
+                            <table className="w-3 m-3 p-1 font-light text-lg bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden">
                                 <thead className="m-3 p-1 font-light bg-red-100 text-black">
                                     <tr>
-                                        <th scope="col" className="p-3">ID</th>
                                         <th scope="col" className="p-3">Nombre</th>
                                         <th scope="col" className="p-3">Precio</th>
                                         <th scope="col" className="p-3">Cantidad</th>
@@ -43,9 +42,9 @@ import { cartContext } from "../Context/CartContext";
                                 </tbody>
                                 <tfoot>
                                     <tr className="m-3 p-1 font-light bg-red-100 text-black">
-                                        <td>Total</td>
-                                        <td colSpan="3"><p>${products.reduce((acc, el) => acc + (el.qty * el.price), 0)}</p></td>
-                                        
+                                        <td className="font-bold">Total</td>
+                                        <td className="font-bold" colSpan="1"><p>${products.reduce((acc, el) => acc + (el.qty * el.price), 0)}</p></td>
+                                        <td></td>
                                         <td>    
                                             <Link to="/Formulario">
                                                 <button className="m-3 p-1 font-light bg-gray-100 text-black drop-shadow-md rounded-md overflow-hidden hover:bg-red-300">Finalizar compra</button>
