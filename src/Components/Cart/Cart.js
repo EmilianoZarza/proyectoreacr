@@ -45,10 +45,11 @@ import { cartContext } from "../Context/CartContext";
                                     <tr className="m-3 p-1 font-light bg-red-100 text-black">
                                         <td colSpan="2">Total</td>
                                         <td><p>${products.reduce((acc, el) => acc + (el.qty * el.price), 0)}</p></td>
-                                        <td></td>
-                                        <Link to="/Formulario">
-                                            <button className="m-3 p-1 font-light bg-gray-100 text-black drop-shadow-md rounded-md overflow-hidden hover:bg-red-300">Finalizar compra</button>
-                                        </Link>
+                                        <td>
+                                            <Link to="/Formulario">
+                                                <button className="m-3 p-1 font-light bg-gray-100 text-black drop-shadow-md rounded-md overflow-hidden hover:bg-red-300">Finalizar compra</button>
+                                            </Link>
+                                        </td>
                                     </tr>
                                 </tfoot>
                             </table>
