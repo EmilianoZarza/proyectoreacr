@@ -29,11 +29,11 @@ import { cartContext } from "../Context/CartContext";
                             <table className="m-3 p-1 font-light bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden">
                                 <thead className="m-3 p-1 font-light bg-red-100 text-black">
                                     <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Precio</th>
-                                        <th scope="col">Cantidad</th>
-                                        <th scope="col">
+                                        <th scope="col" className="p-3">ID</th>
+                                        <th scope="col" className="p-3">Nombre</th>
+                                        <th scope="col" className="p-3">Precio</th>
+                                        <th scope="col" className="p-3">Cantidad</th>
+                                        <th scope="col" className="p-3">
                                             <button onClick={() => clear()} className="m-3 p-1 font-light bg-gray-50 text-black drop-shadow-md rounded-md overflow-hidden hover:bg-red-300">Limpiar</button>
                                         </th>
                                     </tr>
@@ -43,9 +43,9 @@ import { cartContext } from "../Context/CartContext";
                                 </tbody>
                                 <tfoot>
                                     <tr className="m-3 p-1 font-light bg-red-100 text-black">
-                                        <td colSpan="2">Total</td>
-                                        <td><p>${products.reduce((acc, el) => acc + (el.qty * el.price), 0)}</p></td>
-                                        <td></td>
+                                        <td>Total</td>
+                                        <td colSpan="3"><p>${products.reduce((acc, el) => acc + (el.qty * el.price), 0)}</p></td>
+                                        
                                         <td>    
                                             <Link to="/Formulario">
                                                 <button className="m-3 p-1 font-light bg-gray-100 text-black drop-shadow-md rounded-md overflow-hidden hover:bg-red-300">Finalizar compra</button>
